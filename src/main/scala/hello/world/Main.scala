@@ -1,14 +1,13 @@
 package hello.world
 
-import scala.scalajs.js
-import scala.scalajs.js.annotation.{JSExportTopLevel, JSImport}
-import scala.scalajs.LinkingInfo
-
-import slinky.core._
-import slinky.web.ReactDOM
-import slinky.hot
-
 import org.scalajs.dom
+import slinky.hot
+import slinky.web.ReactDOM
+
+import scala.scalajs.{LinkingInfo, js}
+import scala.scalajs.js.annotation.{JSExportTopLevel, JSImport}
+
+import hello.world.component.Game
 
 @JSImport("resources/index.css", JSImport.Default)
 @js.native
@@ -30,6 +29,6 @@ object Main {
       elem
     }
 
-    ReactDOM.render(App(), container)
+    ReactDOM.render(Game(), container)
   }
 }
