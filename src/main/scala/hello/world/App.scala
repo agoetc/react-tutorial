@@ -22,6 +22,10 @@ object ReactLogo extends js.Object
   private val css = AppCSS
 
   def render(): ReactElement = {
+    defaultDom()
+  }
+
+  def defaultDom(): ReactElement = {
     div(className := "App")(
       header(className := "App-header")(
         img(src := ReactLogo.asInstanceOf[String], className := "App-logo", alt := "logo"),
