@@ -11,14 +11,14 @@ import slinky.web.html._
 
   def initialState: State = State(None)
 
-  case class Props(index: Int)
+  case class Props(value: Option[String], onClick: () => Unit)
 
   def render(): ReactElement = {
     button(
       className := "square",
-      onClick := (_ => setState(State(Some("X"))))
+      onClick := props.onClick
     )(
-      state.value
+      props.value
     )
   }
 }
